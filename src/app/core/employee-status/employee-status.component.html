@@ -1,0 +1,132 @@
+<div class="row">
+    <img src="../../../assets/img/cebu-home-builders.jpg" class="rounded mx-auto d-block" alt="...">
+</div>
+<div class="container kristan">
+    <div class="row">
+        <div class="col-1">
+
+        </div>
+        <div class="col-10">
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <div class="form-group row">
+                    <p>Temperature</p>
+                    <div class="col">
+                      <input class="form-control kristan-input" type="number" value="35" required minlength="2" formControlName="q1">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <p>Cough?</p>
+                  <div class="col-2">
+                    <select class="form-control form-control-sm" formControlName="q2">
+                      <option></option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <p>Sore Throat?</p>
+                    <div class="col-2">
+                        <select class="form-control form-control-sm" formControlName="q3">
+                            <option></option>
+                            <option>YES</option>
+                            <option>NO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <p>Body Pains?</p>
+                    <div class="col-2">
+                        <select class="form-control form-control-sm" formControlName="q4">
+                            <option></option>
+                            <option>YES</option>
+                            <option>NO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <p>Headache?</p>
+                    <div class="col-2">
+                        <select class="form-control form-control-sm" formControlName="q5">
+                            <option></option>
+                            <option>YES</option>
+                            <option>NO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <p>Fever?</p>
+                    <div class="col-2">
+                        <select class="form-control form-control-sm" formControlName="q6">
+                            <option></option>
+                            <option>YES</option>
+                            <option>NO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <p>Have you worked together or stayed in the same close environment of a confirmed COVID-19 case? (May nakasama kaba o nakatrabahong tao na kumpirmadong may COVID-19/may impeksyon ng coronavirus?)</p>
+                    <div class="col-2">
+                        <select class="form-control form-control-sm" formControlName="q7">
+                            <option></option>
+                            <option>YES</option>
+                            <option>NO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <p>Have you had any contact with anyone with fever, cough, colds and sore throat in the past 2 weeks? (Mayroon ka bang nakasama na may lagnat, ubom sipon o sakit sa lalamunan sa nakalipas ng dalawang (2) lingo?)</p>
+                    <div class="col-2">
+                    <select class="form-control form-control-sm" formControlName="q8">
+                      <option></option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <p>Have you travelled outside of the Philippines in the last 14 days? (Ikaw ba ay nagbyahe sa labas ng pilipinas sa nakalipas na 14 days araw?)</p>
+                    <div class="col-2">
+                    <select class="form-control form-control-sm" formControlName="q9">
+                      <option></option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <p>Have you travelled outside the Cebu Province in the last 14 days? (Ikaw ba ay nagbyahe sa labas ng Probinsya ng Cebu sa nakalipas na 14 days araw?)</p>
+                    <div class="col-2">
+                    <select class="form-control form-control-sm" formControlName="q10">
+                      <option></option>
+                      <option>YES</option>
+                      <option>NO</option>
+                    </select>
+                  </div>
+                </div>
+                <p class="lead">After clicking submit button below, please wait until success page appers. Thanks. </p>
+                <button type="submit" [disabled]="!profileForm.valid" class="btn btn-primary btn-lg">Submit</button>
+                <p>
+                    Form Status: {{ profileForm.status }}
+                </p>
+              </form>
+        </div>
+        <div class="col-1">
+
+        </div>
+    </div>
+</div>
+  
+  
+  <!-- <p>
+    Form Value: {{ profileForm.value | json }}
+  </p>
+  
+  
+  <p>
+    Form Status: {{ profileForm.status }}
+  </p> -->
+  
+  
+  
+  

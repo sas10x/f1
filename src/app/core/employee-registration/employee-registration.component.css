@@ -1,0 +1,10 @@
+.kristan {
+    padding-top: 10px;
+    border-top:    5px solid #ff0;
+    border-right:  5px solid #ff0;
+    border-bottom: 5px solid #ff0;
+    border-left:   5px solid #ff0;
+}
+.kristan-input {
+    width: 10%;
+}

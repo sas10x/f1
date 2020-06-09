@@ -1,0 +1,130 @@
+
+<div class="container">
+  <div class="row">
+      
+        <div class="col-6">
+          <form class="form-inline">
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd"
+                       name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                </div>
+              </div>
+            </div>
+          </form>
+      
+      <div class='col-6'>
+        <ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
+      </div>
+    <div>
+      <form>
+        <div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="First name">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Last name">
+          </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-2 col-form-label">Temperature</label>
+          <div class="col-2">
+            <input class="form-control" type="number" value="42" id="example-number-input">
+          </div>
+        </div>
+        <hr>
+        <div class="form-group">
+          <label for="inputState">Gender</label>
+          <div class="col-4">
+            <select id="inputState" class="form-control">
+              <option selected>Choose...</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-2 col-form-label">Age</label>
+          <div class="col-2">
+            <input class="form-control" type="number" value="42" id="example-number-input">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputProvince">Province</label>
+          <input type="text" class="form-control" id="inputProvince">
+        </div>
+        <div class="form-group">
+          <label for="inputCity">City</label>
+          <input type="text" class="form-control" id="inputCity">
+        </div>  
+        <div class="form-group">
+          <label for="inputAddress2">Address</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div> 
+        <div>
+          <p>Are you experiencing (nakaranas ka ba ng:</p>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="">Sore throat (pananakit ng lalamunan/masakit lumunok)
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="">Body pain (pananakit ng katawan)
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="">Headache (pananakit ng ulo)
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="">Fever for the past few days (lagnat sa nakalipas na mga araw)
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="">Cough (pag ubo)
+            </label>
+          </div>
+        </div>
+        <hr>
+        <div class="form-group row">
+            <p>Have you worked together or stayed in the same close environment of a confirmed COVID-19 case? (May nakasama kaba o nakatrabahong tao na kumpirmadong may COVID-19/may impeksyon ng coronavirus?)</p>
+          <div class="col-4 test">
+            <select class="form-control form-control-sm">
+              <option></option>
+              <option>YES</option>
+              <option>NO</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <p>Have you had any contact with anyone with fever, cough, colds and sore throat in the past 2 weeks? (Mayroon ka bang nakasama na may lagnat, ubom sipon o sakit sa lalamunan sa nakalipas ng dalawang (2) lingo?)</p>
+          <div class="col-4 test">
+            <select class="form-control form-control-sm">
+              <option></option>
+              <option>YES</option>
+              <option>NO</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <p>Have you travelled to any area in NCR aside from your home? (Ikaw ba ay nagpunta sa iba pang parte ng NCR or Metro Manila bukod sa inyong bahay?)</p>
+          <div class="col-4 test">
+            <select class="form-control form-control-sm">
+              <option></option>
+              <option>YES</option>
+              <option>NO</option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

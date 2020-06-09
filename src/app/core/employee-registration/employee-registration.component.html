@@ -1,0 +1,74 @@
+<div class="row">
+    <img src="../../../assets/img/cebu-home-builders.jpg" class="rounded mx-auto d-block" alt="...">
+</div>
+<main role="main" class="container">
+    <h1 class="mt-5">You think you've already registered?</h1>
+    <h2><a routerLink="/core/login" routerLinkActive="active">Click here</a></h2>
+</main>
+<div class="container kristan">
+    <div class="row">
+        <div class="col-1">
+
+        </div>
+        <div class="col-10">
+            <form [formGroup]="profileForm" (ngSubmit)="addEmployee()">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">ID Number</label>
+                    <div class="col-3">
+                        <input type="number" class="form-control" placeholder="Enter id number" formControlName="idNumber">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">First Name</label>
+                    <div class="col-7">
+                        <input type="text" class="form-control" placeholder="Enter first name" formControlName="firstName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Last Name</label>
+                    <div class="col-7">
+                        <input type="text" class="form-control" placeholder="Enter last name" formControlName="lastName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Sex</label>
+                    <div class="col-2">
+                        <select class="form-control form-control-sm" formControlName="q2" formControlName="sex">
+                            <option></option>
+                            <option>MALE</option>
+                            <option>FEMALE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Age</label>
+                    <div class="col-2">
+                        <input type="number" class="form-control" placeholder="age" formControlName="age">
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label for="inputAddress">Street/Sitio/Subdivision</label>
+                    <input type="text" class="form-control" placeholder="Washington Street, Sitio Garden" formControlName="street">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCity">City</label>
+                      <input type="text" class="form-control" formControlName="city">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputState">Province</label>
+                      <input type="text" class="form-control" formControlName="province">
+                    </div>
+                  </div>
+                <button type="submit" [disabled]="!profileForm.valid" class="btn btn-primary btn-lg">Submit</button>
+              </form>
+              <p>
+                Form Status: {{ profileForm.status }}
+              </p>
+        </div>
+        <div class="col-1">
+
+        </div>
+    </div>
+</div>
