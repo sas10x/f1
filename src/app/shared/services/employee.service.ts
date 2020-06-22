@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { EmployeeEffectsService } from './employee-effects.service';
 import { BehaviorSubject } from 'rxjs';
 
+// const discountsUrl = "http://localhost:5000/api/discounts";
 const discountsUrl = "http://localhost:5000/api/discounts";
 
 @Injectable({
