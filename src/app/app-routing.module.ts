@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './user/login/login.component';
 
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'core'
+    redirectTo: 'login'
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    // canActivate: [FeatureSpecificCanActivateGuard]
   },
   {
     path: 'core',

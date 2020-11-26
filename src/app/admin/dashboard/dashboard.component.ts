@@ -1,35 +1,7 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import {MatDatepickerInputEvent} from '@angular/material/datepicker';
-import { FormControl, Validators, FormBuilder } from '@angular/forms';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-  {position: 11, name: 'Soldium', weight: 1.0079, symbol: 'Na'},
-  {position: 12, name: 'Magnesium', weight: 4.0026, symbol: 'Mg'},
-  {position: 13, name: 'Aluminium', weight: 6.941, symbol: 'Al'},
-  {position: 14, name: 'Silicon', weight: 9.0122, symbol: 'Si'},
-  {position: 15, name: 'Phosphorous', weight: 10.811, symbol: 'P'},
-];
-
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { NzTableQueryParams } from 'ng-zorro-antd/table';
+import { Customer } from 'src/app/shared/model/Customer';
 
 @Component({
   selector: 'app-dashboard',
@@ -37,35 +9,59 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  profileForm = this.fb.group({
-    petsa: ['', Validators.required],
-  });
- 
-
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-
-  // dataSource = ELEMENT_DATA;
-
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-
-  
-  constructor(private fb: FormBuilder) { }
-
+  date = null;
+  loading = true;
+  pageSize = 10;
+  pageIndex = 1;
+  total : number = 1;
+  customers: Customer[];
+  filterStatus = [
+    { text: 'any', value: 'any' },
+    { text: 'pending', value: 'pending' },
+    { text: 'processing', value: 'processing' },
+    { text: 'on-hold', value: 'on-hold' },
+    { text: 'completed', value: 'completed' },
+    { text: 'cancelled', value: 'cancelled' },
+    { text: 'refunded', value: 'refunded' },
+    { text: 'failed', value: 'failed' },
+    { text: 'trash', value: 'trash' }
+  ];
+  constructor(private http: HttpClient) { }
+  baseUrl: string = "http://localhost:8888/api/customer/visits/";
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
-  public doFilter = (value: string) => {
-    this.dataSource.filter = value.trim().toLocaleLowerCase();
+  // getOrders() {
+  //   let params = {}
+  //   this.getOrders(params).subscribe(
+  //     res => {this.total = parseInt(res.headers.get('X-WP-Total'));this.orders = res.body;this.loading = false;}
+  //   )
+  // }
+  getCustomers(date) {
+    let visitUrl = this.baseUrl+date;
+    return this.http.get<any>(visitUrl);
   }
-
-  onSubmit() {
-    console.log(this.profileForm.value);
-
-    console.log(((this.profileForm.value).petsa).valueOf());
-
-    // console.log(((this.profileForm.value).petsa).toISOString());
+  // onQueryParamsChange(params: NzTableQueryParams): void {
+  //   if (params.filter[0].value < 1) {
+  //    params.filter[0].value = ["any"]
+  //   }
+  //   console.log(params.filter[0].value)
+  //   this.loading = true;
+  //   let wooparams = {
+  //     "page": params.pageIndex,
+  //     "per_page": params.pageSize,
+  //     "status": params.filter[0].value
+  //   }
+  //   this.getOrders(wooparams).subscribe(
+  //     res => {this.total = parseInt(res.headers.get('X-WP-Total'));this.customers = res.body;this.loading = false}
+  //   )
+  // }
+  onChange(result: Date): void {
+    console.log('onChange: ', result.toISOString());
+    // let params = {
+    //   date:result.toISOString()
+    // }
+    this.getCustomers(result.toISOString()).subscribe(
+      res => console.log(res)
+    )
   }
 }

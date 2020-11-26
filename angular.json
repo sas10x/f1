@@ -21,12 +21,19 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
+              "src/theme.less",
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -124,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "bayanihan"
+  "defaultProject": "bayanihan",
+  "cli": {
+    "analytics": "e4638cf3-ab9d-4a80-8c09-77caa30fcd95"
+  }
 }

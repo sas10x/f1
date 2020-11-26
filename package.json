@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~9.1.9",
+    "@angular/animations": "^9.1.12",
     "@angular/cdk": "^9.2.4",
     "@angular/common": "~9.1.9",
     "@angular/compiler": "~9.1.9",
@@ -28,6 +28,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
     "bootstrap": "^4.4.0",
+    "ng-zorro-antd": "^9.3.0",
+    "ngx-toastr": "^13.1.0",
     "rxjs": "~6.5.5",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
