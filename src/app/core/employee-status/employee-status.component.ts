@@ -18,15 +18,15 @@ export class EmployeeStatusComponent implements OnInit{
   
   profileForm = this.fb.group({
     q1: ['', Validators.required],
-    q2: ['', Validators.required],
-    q3: ['', Validators.required],
-    q4: ['', Validators.required],
-    q5: ['', Validators.required],
-    q6: ['', Validators.required],
-    q7: ['', Validators.required],
-    q8: ['', Validators.required],
-    q9: ['', Validators.required],
-    q10: ['', Validators.required]
+    q2: ['NO', Validators.required],
+    q3: ['NO', Validators.required],
+    q4: ['NO', Validators.required],
+    q5: ['NO', Validators.required],
+    q6: ['NO', Validators.required],
+    q7: ['NO', Validators.required],
+    q8: ['NO', Validators.required],
+    q9: ['NO', Validators.required],
+    q10: ['NO', Validators.required]
   });
 
   
@@ -93,7 +93,7 @@ export class EmployeeStatusComponent implements OnInit{
      
       this.employeeEffects.addAnswer(a).subscribe(res => {
         console.log(res);
-        this.employeeEffects.addAnswer(a).subscribe(res => {console.log(res);
+        
           this.employeeEffects.addAnswer(b).subscribe(res => {console.log(res);
             this.employeeEffects.addAnswer(c).subscribe(res => {console.log(res);
               this.employeeEffects.addAnswer(d).subscribe(res => {console.log(res);
@@ -119,7 +119,6 @@ export class EmployeeStatusComponent implements OnInit{
               });
             });
           });
-        });
       });
     }
   }

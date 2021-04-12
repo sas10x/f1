@@ -2,14 +2,17 @@
     <div class="col-4">
 
     </div>
-    <div class="col-4">
+    <div class="col-4 idform">
         <!-- <form [formGroup]="profileForm" (ngSubmit)="addEmployee()"></form> -->
-        <form class="form-signin" [formGroup]="profileForm" (ngSubmit)="signIn()">
+          <form class="form-signin" [formGroup]="profileForm" (ngSubmit)="signIn()">
             <img src="../../../assets/img/cebu-home-builders.jpg" class="rounded mx-auto d-block" alt="...">
             <h1 class="text-center font-weight-normal">Please sign in</h1>
             <input type="number" id="inputEmail" class="form-control" placeholder="ID NUMBER" formControlName="idNumber" required autofocus>
             <button [disabled]="!profileForm.valid" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
           </form>
+          <a class="idlink" routerLink="/core/register" routerLinkActive="active">
+            Register
+          </a>
     </div>
     <div class="col-4">
 
