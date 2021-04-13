@@ -12,17 +12,17 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        if (localStorage.getItem('token') != null) {
+        if (localStorage.getItem('2Bqa') != null) {
             const clonedReq = req.clone({
-                headers: req.headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+                headers: req.headers.set('Authorization', 'Bearer ' + localStorage.getItem('2Bqa'))
             });
             return next.handle(clonedReq).pipe(
                 tap(
                     succ => { },
                     err => {
                         if (err.status == 401){
-                            localStorage.removeItem('token');
-                            this.router.navigateByUrl('/user/login');
+                            localStorage.removeItem('2Bqa');
+                            this.router.navigateByUrl('/admin/login');
                         }
                     }
                 )

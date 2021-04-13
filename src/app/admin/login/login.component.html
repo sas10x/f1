@@ -1,1 +1,40 @@
-<p>login works!</p>
+<div class="wrapper">
+	<div class="header">
+		<div class="top">
+			<div class="logo">
+				<img src="../../../assets/img/cebu-home-builders.jpg" alt="instagram" style="width: 175px;">
+			</div>
+			<form #form='ngForm' class="form" autocomplete="off" (submit)="onSubmit(form)">
+				<div class="input_field">
+					<input type="email" class="input" #Email="ngModel" name="Email" [(ngModel)]="formModel.Email" required>
+				</div>
+				<div class="input_field">
+					<input type="password" class="input" #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" required>
+                </div>
+                <button type="submit" class="btn btn-lg btn-block" [disabled]="form.invalid">Login</button>
+                <div *ngIf="!error; else errorNotice">
+                </div>
+                  <ng-template #errorNotice>
+                    <div class="alert alert-danger" role="alert">
+                        This is a danger alert—check it out!
+                    </div>
+                  </ng-template> 
+                </form>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="links">
+			<ul>
+				<li><a>BANILAD</a></li>
+				<li><a>PLARIDEL</a></li>
+				<li><a>MACTAN</a></li>
+				<li><a>CONSOLACION</a></li>
+				<li><a>MINGLANILLA</a></li>
+				<li><a>LABANGON</a></li>
+			</ul>
+        </div>
+    </div>
+    <div class="copyright">
+        © CEBU HOME AND BUILDERS CENTRE
+    </div>
+</div>
