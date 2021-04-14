@@ -37,5 +37,8 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+  logOut() {
+    localStorage.removeItem('2Bqa');
+  }
 
 }

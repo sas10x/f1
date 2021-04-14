@@ -14,14 +14,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmployeeLoginComponent } from './employee-login/employee-login.component';
 import { EmployeeErrorComponent } from './employee-error/employee-error.component';
 import { EmployeeSuccessComponent } from './employee-success/employee-success.component';
+import { BulkAddComponent } from './bulk-add/bulk-add.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, EmployeeStatusComponent, ProfileEditorComponent, EmployeeRegistrationComponent, EmployeeLoginComponent, EmployeeErrorComponent, EmployeeSuccessComponent],
-  imports: [CommonModule, RouterModule.forChild(CoreRoutes), NgbModule, FormsModule, ReactiveFormsModule, FontAwesomeModule, HttpClientModule],
+  declarations: [HomeComponent, EmployeeStatusComponent, ProfileEditorComponent, EmployeeRegistrationComponent, EmployeeLoginComponent, EmployeeErrorComponent, EmployeeSuccessComponent, BulkAddComponent],
+  imports: [CommonModule, RouterModule.forChild(CoreRoutes), NgbModule, FormsModule, ReactiveFormsModule, FontAwesomeModule, HttpClientModule, NzTableModule, NzSpinModule],
   exports: [HomeComponent],
   bootstrap: [HomeComponent]
 })
 export class CoreModule { }
+

@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
   customers: Customer[];
   constructor(private http: HttpClient, private datepipe: DatePipe) { }
   baseUrl: string = "http://localhost:5000/api/employees/answers/";
+  // baseUrl: string = "http://heusc:8000/api/employees/answers/";
   ngOnInit() {
   }
   // getOrders() {

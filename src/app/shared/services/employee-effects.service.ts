@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-// const employeesUrl = "http://localhost:5000/api/employees";
 const employeesUrl = "http://localhost:5000/api/employees";
+// const employeesUrl = "http://heusc:8000/api/employees";
 
 @Injectable({
   providedIn: 'root'

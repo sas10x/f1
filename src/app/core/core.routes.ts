@@ -6,6 +6,7 @@ import { EmployeeRegistrationComponent } from './employee-registration/employee-
 import { EmployeeLoginComponent } from './employee-login/employee-login.component';
 import { EmployeeSuccessComponent } from './employee-success/employee-success.component';
 import { EmployeeErrorComponent } from './employee-error/employee-error.component';
+import { BulkAddComponent } from './bulk-add/bulk-add.component';
 
 
 export const CoreRoutes: Routes = [
@@ -37,6 +38,10 @@ export const CoreRoutes: Routes = [
   {
     path: 'success',
     component: EmployeeSuccessComponent
+  },
+  {
+    path: 'bulk',
+    component: BulkAddComponent
   },
   {
     path: 'error',

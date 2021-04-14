@@ -1,0 +1,38 @@
+<h1>Juts Form</h1>
+<input type="file" (change)="onFileChange($event)" />
+<nz-table #basicTable [nzData]="data">
+    <thead>
+      <tr>
+        <th>IdNumber</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Sex</th>
+        <th>Age</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>Province</th>
+        <th>Branch</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.IdNumber  }}</td>
+        <td>{{ data.FirstName }}</td>
+        <td>{{ data.LastName }}</td>
+        <td>{{ data.Sex }}</td>
+        <td>{{ data.Age }}</td>
+        <td>{{ data.Street }}</td>
+        <td>{{ data.City }}</td>
+        <td>{{ data.Province }}</td>
+        <td>{{ data.Branch }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+  
+  
+  <div *ngIf="!loading; else spin">
+    <button type="button" (click)="addM()">Add</button>
+  </div>
+  <ng-template #spin>
+    <nz-spin nzSimple></nz-spin>
+  </ng-template>

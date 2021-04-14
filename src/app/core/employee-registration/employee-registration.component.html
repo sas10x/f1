@@ -12,6 +12,10 @@
         </div>
         <div class="col-10">
             <form [formGroup]="profileForm" (ngSubmit)="addEmployee()">
+                <div class="form-group col-md-4">
+                    <label for="inputState">Branch</label>
+                    <input type="text" class="form-control" formControlName="branch">
+                  </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">ID Number</label>
                     <div class="col-3">

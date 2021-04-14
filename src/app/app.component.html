@@ -1,1 +1,9 @@
+
+<div *ngIf="!isLoggedIn; else loggedOut">
+    <div class="forLogOut">
+        <button type="button" (click)="logOut()" class="btn btn-dark">Log Out</button>
+    </div>
+  </div>
+  <ng-template #loggedOut>
+  </ng-template>
 <router-outlet></router-outlet>

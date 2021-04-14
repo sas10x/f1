@@ -20,6 +20,7 @@ export class EmployeeRegistrationComponent {
     street: ['', Validators.required],
     city: ['', Validators.required],
     province: ['', Validators.required],
+    branch: ['', Validators.required],
   });
 
   
